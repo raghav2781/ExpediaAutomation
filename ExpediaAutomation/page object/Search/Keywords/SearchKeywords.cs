@@ -116,6 +116,42 @@ namespace ExpediaAutomation.page_object.Search.Keywords
                 return driver.FindElement(By.XPath(SearchConstant.city1dest));
             }
         }
+        private IWebElement TravellersButton {
+            get
+            {
+                return driver.FindElement(By.XPath(SearchConstant.travellersButton));
+            }
+        }
+        private IWebElement PlusButton
+        {
+            get
+            {
+                return driver.FindElement(By.XPath(SearchConstant.plus));
+            }
+        }
+        private IWebElement Trip1CityText
+        {
+            get
+            {
+                return driver.FindElement(By.XPath(SearchConstant.trip1CitiesText));
+            }
+        }
+        private IWebElement Trip2CityText
+        {
+            get
+            {
+                return driver.FindElement(By.XPath(SearchConstant.trip2CitiesText));
+            }
+        }
+        private IWebElement Trip3CityText
+        {
+            get
+            {
+                return driver.FindElement(By.XPath(SearchConstant.trip3CitiesText));
+            }
+        }
+
+
 
         public void SelectFlightButton()
         {
@@ -144,7 +180,7 @@ namespace ExpediaAutomation.page_object.Search.Keywords
             FlyingFrom1.SendKeys(source);
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(SearchConstant.city1source)));
             City1Source.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(FlyingTo1));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(SearchConstant.flyingTo1)));
             FlyingTo1.Click();
             FlyingTo1.SendKeys(dest);
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(SearchConstant.city1dest)));
@@ -184,71 +220,36 @@ namespace ExpediaAutomation.page_object.Search.Keywords
         {
             wait.Until(ExpectedConditions.ElementToBeClickable(SeachButton));
             SeachButton.Click();
-            driver.Close();
+            //driver.Close();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(SearchConstant.trip1CitiesText)));
         }
 
-
-
-
-        public void SelectFlightForMultiCity(string sourceCity1,string destinationCity1, string date1,
-                                             string destinationCity2, string date2, 
-                                             string destinationCity3, string date3)
+        public void SelectTravellers(int travNo) {
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(SearchConstant.travellersButton)));
+            TravellersButton.Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(SearchConstant.plus)));
+            for (int i = 1; i < travNo; i++)
+            {
+                PlusButton.Click();
+            } 
+        }
+        public string Trip1Text() {
+            return Trip1CityText.Text;
+        }
+        public string Trip2Text()
         {
-            InvokeDriver();
-
-            FlightButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(MultiCityButton)).Click();
-            MultiCityButton.Click();
-            wait.Until(ExpectedConditions.TextToBePresentInElement(AddNewFlight, "Add another flight"));
-            action.MoveToElement(AddNewFlight).Build().Perform();
-            AddNewFlight.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(FlyingFrom1));
-
-
-            FlyingFrom1.Click();
-            FlyingFrom1.SendKeys(sourceCity1);
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(SearchConstant.city1source)));
-            City1Source.Click();
-
-            wait.Until(ExpectedConditions.ElementToBeClickable(FlyingTo1));
-            FlyingTo1.Click();
-            FlyingTo1.SendKeys(destinationCity1);
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(SearchConstant.city1dest)));
-            City1Dest.Click();
-
-            wait.Until(ExpectedConditions.ElementToBeClickable(DepartDate1));
-            DepartDate1.Click();
-            DepartDate1.SendKeys(date1);
-            wait.Until(ExpectedConditions.ElementToBeClickable(FlyingFrom1));
-            FlyingFrom1.Click();
-           
-
-            FlyingTo2.Click();
-            FlyingTo2.SendKeys(destinationCity2);
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(SearchConstant.city1dest)));
-            City1Dest.Click();
-
-            wait.Until(ExpectedConditions.ElementToBeClickable(DepartDate2));
-            DepartDate2.Click();
-            DepartDate2.SendKeys(date2);
-            wait.Until(ExpectedConditions.ElementToBeClickable(FlyingTo3));
-
-            FlyingTo3.Click();
-            FlyingTo3.SendKeys(destinationCity3);
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(SearchConstant.city1source)));
-            City1Source.Click();
-
-            wait.Until(ExpectedConditions.ElementToBeClickable(DepartDate3));
-            DepartDate3.Click();
-            DepartDate3.SendKeys(date3);
-
-            wait.Until(ExpectedConditions.ElementToBeClickable(SeachButton));
-            SeachButton.Click();
-            driver.Close();
-
-
+            return Trip2CityText.Text;
+        }
+        public string Trip3Text()
+        {
+            return Trip3CityText.Text;
         }
 
-        
+
+
+
+
+
+
     }
 }
