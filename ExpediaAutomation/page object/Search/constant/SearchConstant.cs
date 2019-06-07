@@ -12,19 +12,19 @@ namespace ExpediaAutomation.page_object.Login.constant
     {
       
         public static string flightButton = "//a[@id='primary-header-flight']";
-        public static string multiCityButton= "/html[1]/body[1]/meso-native-marquee[1]/section[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[2]/section[1]/form[1]/fieldset[1]/div[1]/div[3]/label[1]";
-        public static string flyingFrom1 = "/html[1]/body[1]/meso-native-marquee[1]/section[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[2]/section[1]/form[1]/div[3]/div[1]/div[1]/div[1]/label[1]/input[1]";
-        public static string flyingTo1 = "/html[1]/body[1]/meso-native-marquee[1]/section[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[2]/section[1]/form[1]/div[3]/div[2]/div[1]/div[1]/label[1]/input[1]";
-        public static string departDate1 = "/html[1]/body[1]/meso-native-marquee[1]/section[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[2]/section[1]/form[1]/fieldset[2]/div[1]/div[1]/div[1]/label[1]/input[1]";
+        public static string multiCityButton= "//label[@id='flight-type-multi-dest-label-flp']";
+        public static string flyingFrom1 = "//input[@id='flight-origin-flp']";
+        public static string flyingTo1 = "//input[@id='flight-destination-flp' or @id='flight-destination-hp-flight']";
+        public static string departDate1 = "//input[@id='flight-departing-single-flp']";
        
-        public static string flyingFrom2 = "//input[@id='flight-2-origin-hp-flight']";
-        public static string flyingTo2 = "/html[1]/body[1]/meso-native-marquee[1]/section[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[2]/section[1]/form[1]/div[4]/div[1]/fieldset[1]/div[1]/div[2]/div[1]/div[1]/label[1]/input[1]";
-        public static string departDate2 = "//html[1]/body[1]/meso-native-marquee[1]/section[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[2]/section[1]/form[1]/div[4]/div[1]/fieldset[1]/div[1]/div[3]/div[1]/label[1]/input[1]";
+       // public static string flyingFrom2 = "//input[@id='flight-2-origin-hp-flight']";
+        public static string flyingTo2 = "//input[@id='flight-2-destination-flp']";
+        public static string departDate2 = "//input[@id='flight-2-departing-flp']";
         public static string addNewFlight = "//a[@class='secondary gcw-add-fields']";
         public static string flyingFrom3 = "//input[@id='flight-3-origin-hp-flight']";
-        public static string flyingTo3 = "/html[1]/body[1]/meso-native-marquee[1]/section[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[2]/section[1]/form[1]/div[4]/div[1]/fieldset[2]/div[1]/div[2]/div[1]/div[1]/label[1]/input[1]";
-        public static string departDate3 = "/html[1]/body[1]/meso-native-marquee[1]/section[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[2]/section[1]/form[1]/div[4]/div[1]/fieldset[2]/div[1]/div[3]/div[1]/label[1]/input[1]";
-        public static string searchButton = "/html[1]/body[1]/meso-native-marquee[1]/section[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[2]/section[1]/form[1]/div[8]/label[1]/button[1]";
+        public static string flyingTo3 = "//input[@id='flight-3-destination-flp']";
+        public static string departDate3 = "//input[@id='flight-3-departing-flp']";
+        public static string searchButton = "//div[@class='cols-nested ab25184-submit']//label[@class='col search-btn-col']//button[@class='btn-primary btn-action gcw-submit']";
 
 
 
@@ -35,6 +35,10 @@ namespace ExpediaAutomation.page_object.Login.constant
         public static string trip1CitiesText = "//dd[1]";
         public static string trip2CitiesText = "//dd[2]";
         public static string trip3CitiesText = "//dd[3]";
+        public static string singleAmount = "//li[1]//span[@class='full-bold no-wrap']";
+        public static string totalAmount = "//span[@class='packagePriceTotal']";
+        public static string selectButton = "//button[@data-leg0-natural-key='da204c05d0f932aade99dc5e7ab5fb6e' and @data-leg2-natural-key='15760aa1b716bd812ce45cbea8e52e31' and @data-leg1-natural-key='1add4f447240d55133cd243b5ce4dc6b']";
+
 
     }
 

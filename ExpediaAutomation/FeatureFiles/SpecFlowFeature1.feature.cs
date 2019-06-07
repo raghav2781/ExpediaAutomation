@@ -107,45 +107,6 @@ this.TestForMulti_CityFlight("Luqa", "London", "03/07/2019", "Rome", "06/07/2019
 #line hidden
         }
         
-        public virtual void TestForTotalPrice(string sourceCity1, string destinationCity1, string departdate1, string destinationCity2, string departdate2, string destinationCity3, string departdate3, string[] exampleTags)
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("test for total price", null, exampleTags);
-#line 24
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 25
-       testRunner.Given("open expedia Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 26
-       testRunner.And("Select flight button on home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 27
-    testRunner.And("Select multi-City option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
-    testRunner.And("Select add one more flight option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
-    testRunner.And("Select travellers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 30
-    testRunner.And(string.Format("select {0} and {1} and {2}", sourceCity1, destinationCity1, departdate1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
-    testRunner.And(string.Format("select second last {0} and {1}", destinationCity2, departdate2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
-    testRunner.And(string.Format("select last {0} and {1}", destinationCity3, departdate3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
-       testRunner.When("I press Search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 35
-       testRunner.Then("the total price shown for all travellers should be equal to the price shown for o" +
-                    "ne traveller multiply by toal number of travellers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("test for total price, Luqa", SourceLine=37)]
-        public virtual void TestForTotalPrice_Luqa()
-        {
-#line 24
- this.TestForTotalPrice("Luqa", "London", "03/07/2019", "Rome", "06/07/2019", "Luqa", "09/07/2019", ((string[])(null)));
-#line hidden
-        }
-        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {

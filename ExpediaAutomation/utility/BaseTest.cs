@@ -19,7 +19,7 @@ namespace ExpediaAutomation.utility
         public static void InvokeDriver() {
             driver = new ChromeDriver(@"C:\\Users\\sudeeprana\\Desktop\\Selenium\\Drivers\\");
             OpenHomePage();
-            wait = new WebDriverWait(driver, new TimeSpan(0,0,5));
+            wait = new WebDriverWait(driver, new TimeSpan(0,0,10));
             action = new Actions(driver);
 
         }
@@ -27,6 +27,11 @@ namespace ExpediaAutomation.utility
             driver.Manage().Window.Maximize();
             driver.Manage().Cookies.DeleteAllCookies();
             driver.Navigate().GoToUrl("https://www.expedia.co.in/");
+        }
+        //[TestFixtureTearDown]
+        public void Teardown()
+        {
+            driver.Close();
         }
 
     }

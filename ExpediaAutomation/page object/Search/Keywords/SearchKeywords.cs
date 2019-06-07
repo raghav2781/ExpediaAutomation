@@ -2,12 +2,8 @@
 using ExpediaAutomation.utility;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace ExpediaAutomation.page_object.Search.Keywords
 {
@@ -46,13 +42,13 @@ namespace ExpediaAutomation.page_object.Search.Keywords
                 return driver.FindElement(By.XPath(SearchConstant.departDate1));
             }
         }
-        private IWebElement FlyingFrom2
-        {
-            get
-            {
-                return driver.FindElement(By.XPath(SearchConstant.flyingFrom2));
-            }
-        }
+       // private IWebElement FlyingFrom2
+        //{
+          //  get
+            //{
+            //    return driver.FindElement(By.XPath(SearchConstant.flyingFrom2));
+            //}
+        //}
         private IWebElement FlyingTo2
         {
             get
@@ -150,6 +146,27 @@ namespace ExpediaAutomation.page_object.Search.Keywords
                 return driver.FindElement(By.XPath(SearchConstant.trip3CitiesText));
             }
         }
+        private IWebElement SingleAmount
+        {
+            get
+            {
+                return driver.FindElement(By.XPath(SearchConstant.singleAmount));
+            }
+        }
+        private IWebElement TotalAmount
+        {
+            get
+            {
+                return driver.FindElement(By.XPath(SearchConstant.totalAmount));
+            }
+        }
+        private IWebElement SelectButton
+        {
+            get
+            {
+                return  driver.FindElement(By.XPath(SearchConstant.selectButton));
+            }
+        }
 
 
 
@@ -245,9 +262,44 @@ namespace ExpediaAutomation.page_object.Search.Keywords
             return Trip3CityText.Text;
         }
 
+        public string TotalAmountOnMultiply()
+        {
+            string singleAmount = SingleAmount.Text;
+            string sAmt = singleAmount.Substring(2);
+            string sAmt1 = sAmt.Replace(",", "");
+            float sAmt2 = float.Parse(sAmt1);
+            return (4*sAmt2).ToString();
+
+        }
+        public string TotalAmountOnLastPage()
+        {
+            string parent = driver.CurrentWindowHandle;
+            List<string> allWindow = driver.WindowHandles.ToList();
+            foreach (string child in allWindow)
+            {
+                if (!parent.Equals(child))
+                {
+                    driver.SwitchTo().Window(child);
+                }
+
+            }
+            string totalAmount = TotalAmount.Text;
+            string tAmt = totalAmount.Substring(2);
+            string tAmt1 = tAmt.Replace(",", "");
+            float tAmt2 = float.Parse(tAmt1);
+            driver.Close();
+            driver.SwitchTo().Window(parent);
+            return tAmt2.ToString();
+
+        }
+        public void SelectButtonClick()
+        {
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(SearchConstant.selectButton)));
+            SelectButton.Click();
+            
 
 
-
+        }
 
 
 

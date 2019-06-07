@@ -49,6 +49,7 @@ namespace ExpediaAutomation
         [Given(@"select (.*) and (.*) and (.*)")]
         public void GivenSelectAndAnd(string SourceCity1, string DestinationCity1, string Departdate1)
         {
+            
             SearchKeywords sk = new SearchKeywords();
             sk.SelectSourceCity1AndDestinationCity1AndDepartDate1(SourceCity1, DestinationCity1, Departdate1);
 
@@ -78,16 +79,39 @@ namespace ExpediaAutomation
         public void ThenAllSearchedCitiesShouldBeMatchWithDisplayedCities(string p0, string p1, string p2)
         {
             SearchKeywords sk = new SearchKeywords();
-           // Console.WriteLine(sk.Trip1Text());
-            Assert.IsTrue(sk.Trip1Text().Contains(p0) && sk.Trip1Text().Contains(p1));
-            Assert.IsTrue(sk.Trip2Text().Contains(p1) && sk.Trip2Text().Contains(p2));
-            Assert.IsTrue(sk.Trip3Text().Contains(p0) && sk.Trip3Text().Contains(p2));
+            // Console.WriteLine(sk.Trip1Text());
+            //try
+           // {
+                Assert.IsTrue(sk.Trip1Text().Contains(p0) && sk.Trip1Text().Contains(p1));
+                Assert.IsTrue(sk.Trip2Text().Contains(p1) && sk.Trip2Text().Contains(p2));
+                Assert.IsTrue(sk.Trip3Text().Contains(p0) && sk.Trip3Text().Contains(p2));
+
+          //  }
+            //catch (AssertFailedException e)
+            //{
+                
+           // }
         }
 
 
         [Then(@"the total price shown for all travellers should be equal to the price shown for one traveller multiply by toal number of travellers")]
         public void ThenTheTotalPriceShownForAllTravellersShouldBeEqualToThePriceShownForOneTravellerMultiplyByToalNumberOfTravellers()
         {
+
+            // try {
+            SearchKeywords sk = new SearchKeywords();
+            string multiplyAmt = sk.TotalAmountOnMultiply();
+            sk.SelectButtonClick();
+            string lastPageAmt = sk.TotalAmountOnLastPage();
+            
+            Assert.AreEqual(lastPageAmt, multiplyAmt);
+            
+            
+           
+           // }
+            //catch (Exception e) {
+                //driver.Close();
+            //}
             driver.Close();
             
         }
