@@ -18,7 +18,7 @@
     
 
 
-	<body class='extent standard default hide-overflow '>
+	<body class='extent standard default hide-overflow bdd'>
 		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
 			<span><i class='material-icons'>desktop_windows</i></span>
 		</div>
@@ -43,7 +43,7 @@
         <ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 
             <a>
-                <span class='suite-start-time label blue darken-3'>12-06-2019 16:59:03 India Standard Time</span>
+                <span class='suite-start-time label blue darken-3'>12-06-2019 20:41:36 India Standard Time</span>
             </a>
             <a>
                 <span class="label blue darken-3">3.1.0</span>
@@ -116,36 +116,50 @@
 
 <div id='test-view-charts' class='subview-full'>
     <div id='charts-row' class='row nm-v nm-h'>
-        <div class='col s12 m6 l6 np-h'>
+        <div class='col s12 m4 l4 np-h'>
             <div class='card-panel nm-v'>
-                <div class='left panel-name'>Tests</div>
+                <div class='left panel-name'>Features</div>
                 <div class='chart-box'>
                     <canvas id='parent-analysis' width='100' height='80'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span><span class='strong'>3</span> test(s) passed</span>
+                    <span><span class='strong'>2</span> test(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong'>0</span> test(s) failed, <span class='strong'>0</span> others
+                    <span class='strong'>1</span> test(s) failed, <span class='strong'>0</span> others
                 </div>
             </div>
         </div>
 
-            <div class='col s12 m6 l6 np-h'>
+            <div class='col s12 m4 l4 np-h'>
                 <div class='card-panel nm-v'>
-                    <div class='left panel-name'>Steps</div>
+                    <div class='left panel-name'>Scenarios</div>
                     <div class='chart-box'>
                         <canvas id='child-analysis' width='100' height='80'></canvas>
                     </div>
                     <div class='block text-small'>
-                        <span><span class='strong'>3</span> step(s) passed</span>
+                        <span><span class='strong'>7</span> step(s) passed</span>
                     </div>
                     <div class='block text-small'>
-                        <span class='strong'>0</span> step(s) failed, <span class='strong'>3</span> others
+                        <span class='strong'>1</span> step(s) failed, <span class='strong'>0</span> others
                     </div>
                 </div>
             </div>
 
+            <div class='col s12 m4 l4 np-h'>
+                <div class='card-panel nm-v'>
+                    <div class='left panel-name'>Steps</div>
+                    <div class='chart-box'>
+                        <canvas id='grandchild-analysis' width='100' height='80'></canvas>
+                    </div>
+                    <div class='block text-small'>
+                        <span><span class='strong'>36</span> step(s) passed</span>
+                    </div>
+                    <div class='block text-small'>
+                        <span class='strong'>1</span> step(s) failed, <span class='strong'>0</span> others
+                    </div>
+                </div>
+            </div>
     </div>
 </div>
     <div class='subview-left left'>
@@ -156,116 +170,269 @@
             <ul id='test-collection' class='test-collection'>
 
 
-                    <li class='test displayed active  pass' status='pass' test-id='1'>
+                    <li class='test displayed active has-leaf pass' status='pass' bdd='bdd' test-id='1'>
                         <div class='test-heading'>
-                            <span class='test-name'>login without no credential</span>
-                            <span class='test-time'>12-06-2019 16:59:18</span>
+                            <span class='test-name'>API testing</span>
+                            <span class='test-time'>12-06-2019 20:41:36</span>
                             <span class='test-status right pass'>Pass</span>
                         </div>
                         <div class='test-content hide'>
-                                <div class='test-time-info'>
-                                    <span class='label start-time'>12-06-2019 16:59:18</span>
-                                    <span class='label end-time'>12-06-2019 16:59:18</span>
-                                    <span class='label time-taken grey lighten-1 white-text'>00:00:00.1274444</span>
-                                </div>
-                                    <div class='test-steps'>
-                                        <table class='bordered table-results'>
-                                            <thead>
-                                                <tr>
-                                                    <th>Status</th>
-                                                    <th>Timestamp</th>
-                                                    <th>Details</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                    <tr class='log' status='pass'>
-                                                        <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-                                                        <td class='timestamp'>12-06-2019 16:59:18</td>
-                                                        <td class='step-details'>not able to login without Email id</td>
-                                                    </tr>
-                                                    <tr class='log' status='info'>
-                                                        <td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-                                                        <td class='timestamp'>12-06-2019 16:59:18</td>
-                                                        <td class='step-details'>An email address required.</td>
-                                                    </tr>
-                                            </tbody>
-                                        </table>
+                                    <div class='scenario node' test-id='2' status='pass'>
+                                        <span class='scenario-duration right label'>00:00:03.3473304</span>
+                                        <div class='scenario-desc'>
+                                            <b>Scenario</b>
+                                            Register a new User with correct credentials
+
+                                            
+                                        </div>
+                                            <ul class='steps'>
+                                                    <li test-id='3' class='node when pass' status='when pass'>
+                                                        <b>When</b>
+                                                        I register a new User with 'eve.holt@reqres.in' Username and 'pistol' Password
+                                                                                                                                                                    </li>
+                                                    <li test-id='4' class='node then pass' status='then pass'>
+                                                        <b>Then</b>
+                                                        registration is sucessfull
+                                                                                                                                                                    </li>
+                                                    <li test-id='5' class='node then pass' status='then pass'>
+                                                        <b>Then</b>
+                                                        token is generated
+                                                                                                                                                                    </li>
+                                            </ul>
+                                    </div>
+                                    <div class='scenario node' test-id='6' status='pass'>
+                                        <span class='scenario-duration right label'>00:00:01.3069117</span>
+                                        <div class='scenario-desc'>
+                                            <b>Scenario</b>
+                                            Register a new User with only email
+
+                                            
+                                        </div>
+                                            <ul class='steps'>
+                                                    <li test-id='7' class='node when pass' status='when pass'>
+                                                        <b>When</b>
+                                                        I register a new User with 'eve.holt@reqres.in' username
+                                                                                                                                                                    </li>
+                                                    <li test-id='8' class='node then pass' status='then pass'>
+                                                        <b>Then</b>
+                                                        registration is unsucessfull
+                                                                                                                                                                    </li>
+                                                    <li test-id='9' class='node then pass' status='then pass'>
+                                                        <b>Then</b>
+                                                        An error accured
+                                                                                                                                                                    </li>
+                                            </ul>
+                                    </div>
+                                    <div class='scenario node' test-id='10' status='pass'>
+                                        <span class='scenario-duration right label'>00:00:00.6546715</span>
+                                        <div class='scenario-desc'>
+                                            <b>Scenario</b>
+                                            want to open list of user
+
+                                            
+                                        </div>
+                                            <ul class='steps'>
+                                                    <li test-id='11' class='node when pass' status='when pass'>
+                                                        <b>When</b>
+                                                        I click on user list
+                                                                                                                                                                    </li>
+                                                    <li test-id='12' class='node then pass' status='then pass'>
+                                                        <b>Then</b>
+                                                        users list opened
+                                                                                                                                                                    </li>
+                                            </ul>
                                     </div>
 
                         </div>
                     </li>
-                    <li class='test displayed active  pass' status='pass' test-id='2'>
+                    <li class='test displayed active has-leaf fail' status='fail' bdd='bdd' test-id='13'>
                         <div class='test-heading'>
-                            <span class='test-name'>login without password</span>
-                            <span class='test-time'>12-06-2019 16:59:53</span>
-                            <span class='test-status right pass'>Pass</span>
+                            <span class='test-name'>Flight Search for multi-city</span>
+                            <span class='test-time'>12-06-2019 20:41:41</span>
+                            <span class='test-status right fail'>Fail</span>
                         </div>
                         <div class='test-content hide'>
-                                <div class='test-time-info'>
-                                    <span class='label start-time'>12-06-2019 16:59:53</span>
-                                    <span class='label end-time'>12-06-2019 16:59:53</span>
-                                    <span class='label time-taken grey lighten-1 white-text'>00:00:00.0569530</span>
-                                </div>
-                                    <div class='test-steps'>
-                                        <table class='bordered table-results'>
-                                            <thead>
-                                                <tr>
-                                                    <th>Status</th>
-                                                    <th>Timestamp</th>
-                                                    <th>Details</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                    <tr class='log' status='pass'>
-                                                        <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-                                                        <td class='timestamp'>12-06-2019 16:59:53</td>
-                                                        <td class='step-details'>not able to login without password</td>
-                                                    </tr>
-                                                    <tr class='log' status='info'>
-                                                        <td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-                                                        <td class='timestamp'>12-06-2019 16:59:53</td>
-                                                        <td class='step-details'>Password is required.</td>
-                                                    </tr>
-                                            </tbody>
-                                        </table>
+                                    <div class='scenario node' test-id='14' status='fail'>
+                                        <span class='scenario-duration right label'>00:01:29.6885884</span>
+                                        <div class='scenario-desc'>
+                                            <b>Scenario</b>
+                                            test for multi-city flight
+
+                                            
+                                        </div>
+                                            <ul class='steps'>
+                                                    <li test-id='15' class='node given pass' status='given pass'>
+                                                        <b>Given</b>
+                                                        open expedia Home page
+                                                                                                                                                                    </li>
+                                                    <li test-id='16' class='node given pass' status='given pass'>
+                                                        <b>Given</b>
+                                                        Select flight button on home page
+                                                                                                                                                                    </li>
+                                                    <li test-id='17' class='node given pass' status='given pass'>
+                                                        <b>Given</b>
+                                                        Select multi-City option
+                                                                                                                                                                    </li>
+                                                    <li test-id='18' class='node given pass' status='given pass'>
+                                                        <b>Given</b>
+                                                        Select add one more flight option
+                                                                                                                                                                    </li>
+                                                    <li test-id='19' class='node given pass' status='given pass'>
+                                                        <b>Given</b>
+                                                        Select travellers
+                                                                                                                                                                    </li>
+                                                    <li test-id='20' class='node given pass' status='given pass'>
+                                                        <b>Given</b>
+                                                        select Luqa and London and 03/07/2019
+                                                                                                                                                                    </li>
+                                                    <li test-id='21' class='node given pass' status='given pass'>
+                                                        <b>Given</b>
+                                                        select second last Rome and 06/07/2019
+                                                                                                                                                                    </li>
+                                                    <li test-id='22' class='node given pass' status='given pass'>
+                                                        <b>Given</b>
+                                                        select last Luqa and 09/07/2019
+                                                                                                                                                                    </li>
+                                                    <li test-id='23' class='node when fail' status='when fail'>
+                                                        <b>When</b>
+                                                        I press Search button
+                                                                                                                                                                            <div class='pre'>Timed out after 10 seconds</div>
+                                                    </li>
+                                            </ul>
                                     </div>
 
                         </div>
                     </li>
-                    <li class='test displayed active  pass' status='pass' test-id='3'>
+                    <li class='test displayed active has-leaf pass' status='pass' bdd='bdd' test-id='24'>
                         <div class='test-heading'>
-                            <span class='test-name'>Login With ivalid credential on AutomationPractice.com</span>
-                            <span class='test-time'>12-06-2019 17:00:21</span>
+                            <span class='test-name'>Sign In tests on Automationpratice.com</span>
+                            <span class='test-time'>12-06-2019 20:43:11</span>
                             <span class='test-status right pass'>Pass</span>
                         </div>
                         <div class='test-content hide'>
-                                <div class='test-time-info'>
-                                    <span class='label start-time'>12-06-2019 17:00:21</span>
-                                    <span class='label end-time'>12-06-2019 17:00:21</span>
-                                    <span class='label time-taken grey lighten-1 white-text'>00:00:00.0372000</span>
-                                </div>
-                                    <div class='test-steps'>
-                                        <table class='bordered table-results'>
-                                            <thead>
-                                                <tr>
-                                                    <th>Status</th>
-                                                    <th>Timestamp</th>
-                                                    <th>Details</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                    <tr class='log' status='pass'>
-                                                        <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-                                                        <td class='timestamp'>12-06-2019 17:00:21</td>
-                                                        <td class='step-details'>not able to login</td>
-                                                    </tr>
-                                                    <tr class='log' status='info'>
-                                                        <td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-                                                        <td class='timestamp'>12-06-2019 17:00:21</td>
-                                                        <td class='step-details'>Authentication failed.</td>
-                                                    </tr>
-                                            </tbody>
-                                        </table>
+                                    <div class='scenario node' test-id='25' status='pass'>
+                                        <span class='scenario-duration right label'>00:00:33.6685887</span>
+                                        <div class='scenario-desc'>
+                                            <b>Scenario</b>
+                                            Sign in with no Credentials test
+
+                                            
+                                        </div>
+                                            <ul class='steps'>
+                                                    <li test-id='26' class='node given pass' status='given pass'>
+                                                        <b>Given</b>
+                                                        Open automation HomePage
+                                                                                                                                                                    </li>
+                                                    <li test-id='27' class='node when pass' status='when pass'>
+                                                        <b>When</b>
+                                                        Click on Sign In button on HomePage
+                                                                                                                                                                    </li>
+                                                    <li test-id='28' class='node when pass' status='when pass'>
+                                                        <b>When</b>
+                                                        Leave Email and Password field empty and click on SignIn Button on SignInPage
+                                                                                                                                                                    </li>
+                                                    <li test-id='29' class='node then pass' status='then pass'>
+                                                        <b>Then</b>
+                                                        The correct message should be display
+                                                                                                                                                                    </li>
+                                                    <li test-id='30' class='node then pass' status='then pass'>
+                                                        <b>Then</b>
+                                                        Close the chrome
+                                                                                                                                                                    </li>
+                                            </ul>
+                                    </div>
+                                    <div class='scenario node' test-id='31' status='pass'>
+                                        <span class='scenario-duration right label'>00:00:32.4934330</span>
+                                        <div class='scenario-desc'>
+                                            <b>Scenario</b>
+                                            Sign in with only emailId Credentials test
+
+                                            
+                                        </div>
+                                            <ul class='steps'>
+                                                    <li test-id='32' class='node given pass' status='given pass'>
+                                                        <b>Given</b>
+                                                        Open automation HomePage
+                                                                                                                                                                    </li>
+                                                    <li test-id='33' class='node when pass' status='when pass'>
+                                                        <b>When</b>
+                                                        Click on Sign In button on HomePage
+                                                                                                                                                                    </li>
+                                                    <li test-id='34' class='node when pass' status='when pass'>
+                                                        <b>When</b>
+                                                        Enter Email and leave Password field empty and click on SignIn Button on SignInPage
+                                                                                                                                                                    </li>
+                                                    <li test-id='35' class='node then pass' status='then pass'>
+                                                        <b>Then</b>
+                                                        The correct message should be display without password
+                                                                                                                                                                    </li>
+                                                    <li test-id='36' class='node then pass' status='then pass'>
+                                                        <b>Then</b>
+                                                        Close the chrome
+                                                                                                                                                                    </li>
+                                            </ul>
+                                    </div>
+                                    <div class='scenario node' test-id='37' status='pass'>
+                                        <span class='scenario-duration right label'>00:00:36.8180659</span>
+                                        <div class='scenario-desc'>
+                                            <b>Scenario</b>
+                                            Sign in with only Password Credentials test
+
+                                            
+                                        </div>
+                                            <ul class='steps'>
+                                                    <li test-id='38' class='node given pass' status='given pass'>
+                                                        <b>Given</b>
+                                                        Open automation HomePage
+                                                                                                                                                                    </li>
+                                                    <li test-id='39' class='node when pass' status='when pass'>
+                                                        <b>When</b>
+                                                        Click on Sign In button on HomePage
+                                                                                                                                                                    </li>
+                                                    <li test-id='40' class='node when pass' status='when pass'>
+                                                        <b>When</b>
+                                                        leave Email empty and enter Password and click on SignIn Button on SignInPage
+                                                                                                                                                                    </li>
+                                                    <li test-id='41' class='node then pass' status='then pass'>
+                                                        <b>Then</b>
+                                                        The correct message should be display without email
+                                                                                                                                                                    </li>
+                                                    <li test-id='42' class='node then pass' status='then pass'>
+                                                        <b>Then</b>
+                                                        Close the chrome
+                                                                                                                                                                    </li>
+                                            </ul>
+                                    </div>
+                                    <div class='scenario node' test-id='43' status='pass'>
+                                        <span class='scenario-duration right label'>00:00:44.7629906</span>
+                                        <div class='scenario-desc'>
+                                            <b>Scenario</b>
+                                            Sign in with incorrect Credentials test
+
+                                            
+                                        </div>
+                                            <ul class='steps'>
+                                                    <li test-id='44' class='node given pass' status='given pass'>
+                                                        <b>Given</b>
+                                                        Open automation HomePage
+                                                                                                                                                                    </li>
+                                                    <li test-id='45' class='node when pass' status='when pass'>
+                                                        <b>When</b>
+                                                        Click on Sign In button on HomePage
+                                                                                                                                                                    </li>
+                                                    <li test-id='46' class='node when pass' status='when pass'>
+                                                        <b>When</b>
+                                                        enter Incorrect EmailId and Password and click on SignIn Button on SignInPage
+                                                                                                                                                                    </li>
+                                                    <li test-id='47' class='node then pass' status='then pass'>
+                                                        <b>Then</b>
+                                                        The correct message should be display with incorrect credentials
+                                                                                                                                                                    </li>
+                                                    <li test-id='48' class='node then pass' status='then pass'>
+                                                        <b>Then</b>
+                                                        Close the chrome
+                                                                                                                                                                    </li>
+                                            </ul>
                                     </div>
 
                         </div>
@@ -279,16 +446,6 @@
         <div class='view-summary'>
             <h5 class='test-name'></h5>
 
-            <div id='step-filters' class="right">
-                <span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
-                <span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
-                <span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
-                <span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
-                <span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
-                <span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
-                <span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
-                <span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
-            </div>
         </div>
     </div>
     <!-- subview right -->
@@ -344,30 +501,36 @@
         <div class='row'>
             <div class='col s2'>
                 <div class='card-panel r'>
- <span>Tests</span>                     <div class='panel-lead'>3</div>
+ <span>Features</span>                     <div class='panel-lead'>3</div>
                 </div>
             </div>
             <div class='col s2'>
                 <div class='card-panel r'>
- <span>Steps</span>                     <div class='panel-lead'>6</div>
+ <span>Scenarios</span>                     <div class='panel-lead'>8</div>
                 </div>
             </div>
+                <div class='col s2'>
+                    <div class='card-panel r'>
+                        Steps
+                        <div class='panel-lead'>37</div>
+                    </div>
+                </div>
             <div class='col s2'>
                 <div class='card-panel r'>
                     Start
-                    <div class='panel-lead'>12-06-2019 16:59:03</div>
+                    <div class='panel-lead'>12-06-2019 20:41:36</div>
                 </div>
             </div>
             <div class='col s2'>
                 <div class='card-panel r'>
                     End
-                    <div class='panel-lead'>12-06-2019 17:00:29</div>
+                    <div class='panel-lead'>12-06-2019 20:46:02</div>
                 </div>
             </div>
             <div class='col s2'>
                 <div class='card-panel r'>
                     Time Taken
-                    <div class='panel-lead'>00:01:25.4393082</div>
+                    <div class='panel-lead'>00:04:26.0885089</div>
                 </div>
             </div>
 
@@ -386,23 +549,23 @@
 
 		<script>
 			var statusGroup = {
-			    passParent: 3,
-			    failParent: 0,
+			    passParent: 2,
+			    failParent: 1,
 			    fatalParent: 0,
 			    errorParent: 0,
 			    warningParent: 0,
 			    skipParent: 0,
 				
-			    passChild: 3,
-			    failChild: 0,
+			    passChild: 7,
+			    failChild: 1,
 			    fatalChild: 0,
 			    errorChild: 0,
 			    warningChild: 0,
 			    skipChild: 0,
-			    infoChild: 3,
+			    infoChild: 0,
 				
-			    passGrandChild: 0,
-			    failGrandChild: 0,
+			    passGrandChild: 36,
+			    failGrandChild: 1,
 			    fatalGrandChild: 0,
 			    errorGrandChild: 0,
 			    warningGrandChild: 0,

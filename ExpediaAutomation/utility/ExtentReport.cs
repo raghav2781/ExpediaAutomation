@@ -11,6 +11,9 @@ namespace ExpediaAutomation.utility
     class ExtentReport
     {
         public static ExtentReports extent;
+        public static ExtentTest featureName;
+
+        public static ExtentTest scenerio;
         public static void ExtentReportInitiating()
         {
 

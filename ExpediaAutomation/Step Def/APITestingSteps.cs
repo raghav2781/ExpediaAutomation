@@ -23,14 +23,14 @@ namespace ExpediaAutomation.Step_Def
         [Then(@"registration is sucessfull")]
         public void ThenRegistrationIsSucessfull()
         {
-            ExtentTest test = ExtentReport.extent.CreateTest("Registration test on 'reqres.in/api/register' with valid username and password");
+            //ExtentTest test = ExtentReport.extent.CreateTest("Registration test on 'reqres.in/api/register' with valid username and password");
             APIKeyword ak = new APIKeyword();
             try { Assert.AreEqual(200, ak.ResponseCode());
-                test.Log(Status.Pass, "Registration successfull (Response code matched)");
+                //test.Log(Status.Pass, "Registration successfull (Response code matched)");
             }
             catch (AssertFailedException e)
             {
-                test.Log(Status.Fail, "Registration unsuccessfull(Response code not matched)");
+                //test.Log(Status.Fail, "Registration unsuccessfull(Response code not matched)");
                 throw e;
             }
         }
@@ -39,12 +39,12 @@ namespace ExpediaAutomation.Step_Def
         public void ThenTokenIsGenerated()
         {
             APIKeyword ak = new APIKeyword();
-            ExtentTest test = ExtentReport.extent.CreateTest("Token Availablity on successfull registration Test");
+            //ExtentTest test = ExtentReport.extent.CreateTest("Token Availablity on successfull registration Test");
             try { Assert.IsFalse(ak.Tokenvalue() == null);
-                test.Log(Status.Pass, "Token is available");
+              //  test.Log(Status.Pass, "Token is available");
             }
             catch (AssertFailedException e) {
-                test.Log(Status.Fail, "Token is not available");
+                //test.Log(Status.Fail, "Token is not available");
                 throw e;
             }
             
@@ -60,12 +60,12 @@ namespace ExpediaAutomation.Step_Def
         public void ThenRegistrationIsUnsucessfull()
         {
             APIKeyword ak = new APIKeyword();
-            ExtentTest test = ExtentReport.extent.CreateTest("Registration with only username on 'reqres.in/api/register' Test");
+            //ExtentTest test = ExtentReport.extent.CreateTest("Registration with only username on 'reqres.in/api/register' Test");
             try { Assert.AreEqual(400, ak.ResponseCode1());
-                test.Log(Status.Pass, "Registration unsuccessful with only username");
+              //  test.Log(Status.Pass, "Registration unsuccessful with only username");
             }
             catch (AssertFailedException e) {
-                test.Log(Status.Fail, "Registration successful with only username");
+                //test.Log(Status.Fail, "Registration successful with only username");
                 throw e;
             }
         }
@@ -74,12 +74,12 @@ namespace ExpediaAutomation.Step_Def
         public void ThenAnErrorAccured()
         {
             APIKeyword ak = new APIKeyword();
-            ExtentTest test = ExtentReport.extent.CreateTest("Checking error presence on registration with only username");
+            //ExtentTest test = ExtentReport.extent.CreateTest("Checking error presence on registration with only username");
             try { Assert.IsFalse(ak.Error() == null);
-                test.Log(Status.Pass, "error is present");
+              //  test.Log(Status.Pass, "error is present");
             }catch(AssertFailedException e)
             {
-                test.Log(Status.Fail, "error is not present");
+                //test.Log(Status.Fail, "error is not present");
                 throw e;
             }
         }
@@ -94,12 +94,12 @@ namespace ExpediaAutomation.Step_Def
         public void ThenUsersListOpened()
         {
             APIKeyword ak = new APIKeyword();
-            ExtentTest test = ExtentReport.extent.CreateTest("user list on 'reqres.in/api/register' Test");
+            //ExtentTest test = ExtentReport.extent.CreateTest("user list on 'reqres.in/api/register' Test");
             try { Assert.AreEqual(200, ak.ResponseCode2());
-                test.Log(Status.Pass, "Response code matched");
+              //  test.Log(Status.Pass, "Response code matched");
             }
             catch (AssertFailedException e) {
-                test.Log(Status.Fail, "Response code not matched");
+                //test.Log(Status.Fail, "Response code not matched");
                 throw e;
             }
         }

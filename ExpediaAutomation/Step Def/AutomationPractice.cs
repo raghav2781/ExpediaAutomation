@@ -41,13 +41,13 @@ namespace ExpediaAutomation.Step_Def
         public void ThenTheCorrectMessageShouldBeDisplay()
         {
             SignInPageKeyword sk = new SignInPageKeyword();
-            ExtentTest test = ExtentReport.extent.CreateTest("login without no credential");
+            //ExtentTest test = ExtentReport.extent.CreateTest("login without no credential");
             try { Assert.AreEqual("An email address required.", sk.GetTextWithoutEmailAndPassword());
-                test.Log(Status.Pass, "not able to login without Email id");
-                test.Info(sk.GetTextWithoutEmailAndPassword());
+              //  test.Log(Status.Pass, "not able to login without Email id");
+                //test.Info(sk.GetTextWithoutEmailAndPassword());
             }
             catch(AssertFailedException e) {
-                test.Log(Status.Fail, "able to login without Email id");
+                //test.Log(Status.Fail, "able to login without Email id");
                 throw e;
             }
             
@@ -70,13 +70,13 @@ namespace ExpediaAutomation.Step_Def
         public void ThenTheCorrectMessageShouldBeDisplayWithoutPassword()
         {
             SignInPageKeyword sk = new SignInPageKeyword();
-            ExtentTest test = ExtentReport.extent.CreateTest("login without password");
+            //ExtentTest test = ExtentReport.extent.CreateTest("login without password");
             try { Assert.AreEqual("Password is required.", sk.GetTextWithoutPassword());
-                test.Log(Status.Pass, "not able to login without password");
-                test.Info(sk.GetTextWithoutPassword());
+              //  test.Log(Status.Pass, "not able to login without password");
+                //test.Info(sk.GetTextWithoutPassword());
             } catch(AssertFailedException e)
             {
-                test.Log(Status.Fail, "able to login without password");
+                //test.Log(Status.Fail, "able to login without password");
                 throw e;
             }
         }
@@ -94,13 +94,13 @@ namespace ExpediaAutomation.Step_Def
         public void ThenTheCorrectMessageShouldBeDisplayWithoutEmail()
         {
             SignInPageKeyword sk = new SignInPageKeyword();
-            ExtentTest test = ExtentReport.extent.CreateTest("login without email");
+            //ExtentTest test = ExtentReport.extent.CreateTest("login without email");
             try { Assert.AreEqual("An email address required.", sk.GetTextWithoutEmail());
-                test.Log(Status.Pass, "not able to login");
-                test.Info(sk.GetTextWithoutEmail());
+              //  test.Log(Status.Pass, "not able to login");
+                //test.Info(sk.GetTextWithoutEmail());
             }catch(AssertFailedException e)
             {
-                test.Log(Status.Fail, "able to login");
+                //test.Log(Status.Fail, "able to login");
                 throw e;
 
             }
@@ -119,15 +119,15 @@ namespace ExpediaAutomation.Step_Def
         public void ThenTheCorrectMessageShouldBeDisplayWithIncorrectCredentials()
         {
             SignInPageKeyword sk = new SignInPageKeyword();
-            ExtentTest test = ExtentReport.extent.CreateTest("Login With ivalid credential on AutomationPractice.com");
+            //ExtentTest test = ExtentReport.extent.CreateTest("Login With ivalid credential on AutomationPractice.com");
 
             try
             {
                 Assert.AreEqual("Authentication failed.", sk.GetTextWithIcorrectCredentials());
-                test.Log(Status.Pass, "not able to login");
-                test.Info(sk.GetTextWithIcorrectCredentials());
+              //  test.Log(Status.Pass, "not able to login");
+                //test.Info(sk.GetTextWithIcorrectCredentials());
             } catch (AssertFailedException e) {
-                test.Log(Status.Fail, "able to login");
+                //test.Log(Status.Fail, "able to login");
                 throw e;
             }
             }

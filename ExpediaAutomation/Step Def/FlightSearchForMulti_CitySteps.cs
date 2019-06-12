@@ -82,21 +82,21 @@ namespace ExpediaAutomation
         {
             SearchKeywords sk = new SearchKeywords();
             // Console.WriteLine(sk.Trip1Text());
-            ExtentTest test = ExtentReport.extent.CreateTest("To verify the searched cities on");
+            //ExtentTest test = ExtentReport.extent.CreateTest("To verify the searched cities on");
             try
             {
                 Assert.IsTrue(sk.Trip1Text().Contains(p0) && sk.Trip1Text().Contains(p1));
                 Assert.IsTrue(sk.Trip2Text().Contains(p1) && sk.Trip2Text().Contains(p2));
                 Assert.IsTrue(sk.Trip3Text().Contains(p0) && sk.Trip3Text().Contains(p2));
-                test.Log(Status.Pass, "All searched cities are present on search page");
+              //  test.Log(Status.Pass, "All searched cities are present on search page");
             }
             catch (AssertFailedException e)
             {
-                test.Log(Status.Fail, "All searched cities are not present on search page");
+                //test.Log(Status.Fail, "All searched cities are not present on search page");
                 throw e;
             }
             catch (Exception e) {
-                test.Log(Status.Fail, "table of cities is not present");
+                //test.Log(Status.Fail, "table of cities is not present");
                 throw e;
             }
         }
@@ -111,15 +111,15 @@ namespace ExpediaAutomation
             string multiplyAmt = sk.TotalAmountOnMultiply();
             sk.SelectButtonClick();
             string lastPageAmt = sk.TotalAmountOnLastPage();
-            ExtentTest test = ExtentReport.extent.CreateTest("To verify the total amount of tickets");
+            //ExtentTest test = ExtentReport.extent.CreateTest("To verify the total amount of tickets");
 
             try {
                 Assert.AreEqual(lastPageAmt, multiplyAmt);
-                test.Log(Status.Pass, "total amount of tickets is matched with sum of all tickets");
+              //  test.Log(Status.Pass, "total amount of tickets is matched with sum of all tickets");
             }
             catch(AssertFailedException e)
             {
-                test.Log(Status.Pass, "total amount of tickets is matched with sum of all tickets");
+                //test.Log(Status.Pass, "total amount of tickets is matched with sum of all tickets");
                 throw e;
 
             }
