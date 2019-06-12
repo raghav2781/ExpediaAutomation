@@ -17,13 +17,13 @@ namespace ExpediaAutomation.FeatureFiles
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("API testing", SourceFile="FeatureFiles\\SpecFlowFeature1.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("API testing", SourceFile="FeatureFiles\\APITesting.feature", SourceLine=0)]
     public partial class APITestingFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "SpecFlowFeature1.feature"
+#line 1 "APITesting.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
@@ -88,6 +88,45 @@ testRunner.And("token is generated", ((string)(null)), ((TechTalk.SpecFlow.Table
 #line 3
 this.RegisterANewUserWithCorrectCredentials("eve.holt@reqres.in", "pistol", ((string[])(null)));
 #line hidden
+        }
+        
+        public virtual void RegisterANewUserWithOnlyEmail(string email, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Register a new User with only email", null, exampleTags);
+#line 13
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 14
+testRunner.When(string.Format("I register a new User with \'{0}\' username", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+testRunner.Then("registration is unsucessfull", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 16
+testRunner.And("An error accured", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Register a new User with only email, eve.holt@reqres.in", SourceLine=20)]
+        public virtual void RegisterANewUserWithOnlyEmail_Eve_HoltReqres_In()
+        {
+#line 13
+this.RegisterANewUserWithOnlyEmail("eve.holt@reqres.in", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("want to open list of user", SourceLine=22)]
+        public virtual void WantToOpenListOfUser()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("want to open list of user", null, ((string[])(null)));
+#line 23
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 24
+testRunner.When("I click on user list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 25
+testRunner.Then("users list opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.TestRunCleanup()]

@@ -37,7 +37,7 @@ namespace ExpediaAutomation.page_object.Login.constant
         public static string trip3CitiesText = "//dd[3]";
         public static string singleAmount = "//li[1]//span[@class='full-bold no-wrap']";
         public static string totalAmount = "//span[@class='packagePriceTotal']";
-        public static string selectButton = "//button[@data-leg0-natural-key='da204c05d0f932aade99dc5e7ab5fb6e' and @data-leg2-natural-key='15760aa1b716bd812ce45cbea8e52e31' and @data-leg1-natural-key='1add4f447240d55133cd243b5ce4dc6b']";
+        public static string selectButton = "//button[@class='btn-secondary btn-action t-select-btn' and @data-leg-indexes='1,1,1']";
 
 
     }

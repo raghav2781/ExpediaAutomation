@@ -39,7 +39,7 @@
   </xs:complexType>
 
   <xs:complexType name="ExecutionSettings">
-    <xs:attribute name="stopAfterFailures" type="xs:int" use="optional" default="10" />
+    <xs:attribute name="stopAfterFailures" type="xs:int" use="optional" default="0" />
     <xs:attribute name="testSchedulingMode" type="TestSchedulingMode" use="optional" default="Sequential" />
     <xs:attribute name="testThreadCount" type="TestThreadCount" use="optional" default="1" />
     <xs:attribute name="retryFor" type="RetryMode" use="optional" default="Failing" />

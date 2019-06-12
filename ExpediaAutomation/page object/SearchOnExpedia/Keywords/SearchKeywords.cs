@@ -42,12 +42,12 @@ namespace ExpediaAutomation.page_object.Search.Keywords
                 return driver.FindElement(By.XPath(SearchConstant.departDate1));
             }
         }
-       // private IWebElement FlyingFrom2
+        // private IWebElement FlyingFrom2
         //{
-          //  get
-            //{
-            //    return driver.FindElement(By.XPath(SearchConstant.flyingFrom2));
-            //}
+        //  get
+        //{
+        //    return driver.FindElement(By.XPath(SearchConstant.flyingFrom2));
+        //}
         //}
         private IWebElement FlyingTo2
         {
@@ -164,7 +164,7 @@ namespace ExpediaAutomation.page_object.Search.Keywords
         {
             get
             {
-                return  driver.FindElement(By.XPath(SearchConstant.selectButton));
+                return driver.FindElement(By.XPath(SearchConstant.selectButton));
             }
         }
 
@@ -174,7 +174,6 @@ namespace ExpediaAutomation.page_object.Search.Keywords
         {
             FlightButton.Click();
         }
-
         public void SelectMulti_CityOption()
         {
             wait.Until(ExpectedConditions.ElementToBeClickable(MultiCityButton)).Click();
@@ -188,9 +187,9 @@ namespace ExpediaAutomation.page_object.Search.Keywords
         }
         public void SelectTravellers()
         {
-            
+
         }
-        public void SelectSourceCity1AndDestinationCity1AndDepartDate1(string source,string dest, string date)
+        public void SelectSourceCity1AndDestinationCity1AndDepartDate1(string source, string dest, string date)
         {
             wait.Until(ExpectedConditions.ElementToBeClickable(FlyingFrom1));
             FlyingFrom1.Click();
@@ -248,7 +247,7 @@ namespace ExpediaAutomation.page_object.Search.Keywords
             for (int i = 1; i < travNo; i++)
             {
                 PlusButton.Click();
-            } 
+            }
         }
         public string Trip1Text() {
             return Trip1CityText.Text;
@@ -268,7 +267,7 @@ namespace ExpediaAutomation.page_object.Search.Keywords
             string sAmt = singleAmount.Substring(2);
             string sAmt1 = sAmt.Replace(",", "");
             float sAmt2 = float.Parse(sAmt1);
-            return (4*sAmt2).ToString();
+            return (4 * sAmt2).ToString();
 
         }
         public string TotalAmountOnLastPage()
@@ -296,12 +295,7 @@ namespace ExpediaAutomation.page_object.Search.Keywords
         {
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(SearchConstant.selectButton)));
             SelectButton.Click();
-            
-
-
-        }
-
-
+        } 
 
     }
 }
